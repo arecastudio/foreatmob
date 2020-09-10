@@ -1,1 +1,1 @@
-# Foreat Mobile App
+# Foreat Mobile Application
