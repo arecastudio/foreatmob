@@ -10,6 +10,8 @@ import React from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import {
   SafeAreaView,
   StyleSheet,
@@ -29,22 +31,16 @@ import {
 import { Button } from 'native-base';
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
 
 const App: () => React$Node = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{
-        headerStyle:{
-          backgroundColor:'#009387'
-        },
-        headerTintColor:'#fff',
-        headerTitleStyle:{
-          fontWeight:'bold'
-        }
-      }}>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Detail" component={DetailScreen} />
-      </Stack.Navigator>
+      <Tab.Navigator >
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Detail" component={DetailScreen} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
@@ -53,9 +49,6 @@ const HomeScreen=({navigation})=>{
   return(
     <View style={styles.screen}>
       <Text>Home</Text>
-      <Button onPress={()=>navigation.navigate("Detail")} style={{}}>
-        <Text>Goto Detail</Text>
-      </Button>
     </View>
   );
 }
