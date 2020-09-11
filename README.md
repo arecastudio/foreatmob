@@ -4,11 +4,11 @@
 - https://www.figma.com/file/oELSIgcbK9yiNREBivGKzH/Fooder-Final?node-id=37%3A258
 
 ## Progress
-### [ ] Home
+### Home
 - [ ] Auto geolocation
 - [x] Greeting
 - [ ] Categories
 - [ ] Popular promo items
-## [ ] Shop
-## [ ] Search
-## [ ] Profile
+## Shop
+## Search
+## Profile
