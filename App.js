@@ -9,8 +9,14 @@
 import React from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+//import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+//import Picker from '@react-native-community/picker';
+//import { Icon } from 'react-native-elements';
+
+
+
 
 import {
   SafeAreaView,
@@ -29,8 +35,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import { Button } from 'native-base';
+import HomeScreen from './screen/Home';
 
-const Stack = createStackNavigator();
+//const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 
@@ -38,27 +45,61 @@ const App: () => React$Node = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator >
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Detail" component={DetailScreen} />
+        <Tab.Screen name="Home" component={HomeScreen} 
+        options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color, size }) => (
+            <Icon size={24} color="red" name="home" />
+          ),
+        }} />
+        <Tab.Screen name="Shop" component={ShopScreen}
+        options={{
+          tabBarLabel: 'Shop',
+          tabBarIcon: ({ color, size }) => (
+            <Icon size={24} color="red" name="shopping-cart" />
+          ),
+        }} />
+        <Tab.Screen name="Search" component={SearchScreen}
+        options={{
+          tabBarLabel: 'Serch',
+          tabBarIcon: ({ color, size }) => (
+            <Icon size={24} color="red" name="search" />
+          ),
+        }} />
+        <Tab.Screen name="Profile" component={ProfileScreen}
+        options={{
+          tabBarLabel: 'Profile',
+          tabBarIcon: ({ color, size }) => (
+            <Icon size={24} color="red" name="user" />
+          ),
+        }} />
       </Tab.Navigator>
     </NavigationContainer>
   );
 };
 
-const HomeScreen=({navigation})=>{
+const SearchScreen=({navigation})=>{
   return(
     <View style={styles.screen}>
-      <Text>Home</Text>
+      <Text>Search</Text>
     </View>
   );
 }
 
-const DetailScreen=({navigation})=>{
-  return(
-    <View style={styles.screen}>
-      <Text>Detail</Text>
-    </View>
-  );
+const ShopScreen=({navigation})=>{
+    return(
+	<View style={styles.screen}>
+	    <Text>Shop</Text>
+	</View>
+    );
+}
+
+const ProfileScreen=({navigation})=>{
+    return(
+	<View style={styles.screen}>
+	    <Text>Profile</Text>
+	</View>
+    );
 }
 
 const styles = StyleSheet.create({
@@ -66,6 +107,7 @@ const styles = StyleSheet.create({
     flex:1,
     alignItems:'center',
     justifyContent:'center',
+    //padding:5,
   },
   scrollView: {
     backgroundColor: Colors.lighter,
