@@ -25,13 +25,37 @@ const HomeScreen=({navigation})=>{
         </View>
 
         <View style={{paddingTop:15,}}>
-            <Text style={{fontSize:20,fontWeight:'bold'}}>Hello, John</Text>
+            <Text style={{fontSize:20,fontWeight:'bold',color:'#3E4462'}}>Hello, John</Text>
             <Text style={{}}>What do you want to eat?</Text>
         </View>
 
-        <View>
-            <TouchableOpacity>
-                <Text>Click Here</Text>
+        <View style={{paddingTop:15,flexDirection:'row',justifyContent:'center'}}>
+            <TouchableOpacity style={styles.catbank}>
+                <View style={styles.category}>
+                    <Icon size={24} color="red" name="heart" />
+                    <Text>Favofite</Text>
+                </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.catbank}>
+                <View style={styles.category}>
+                    <Icon size={24} color="red" name="tags" />
+                    <Text>Cheap</Text>
+                </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.catbank}>
+                <View style={styles.category}>
+                    <Icon size={24} color="red" name="poll" />
+                    <Text>Trend</Text>
+                </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.catbank}>
+                <View style={styles.category}>
+                    <Icon size={24} color="red" name="angle-double-right" />
+                    <Text>More</Text>
+                </View>
             </TouchableOpacity>
         </View>
         
@@ -45,11 +69,23 @@ const HomeScreen=({navigation})=>{
       //alignItems:'center',
       //justifyContent:'center',
       padding:15,
+      backgroundColor:'#F8F5F2'
     },
     topbar:{
         //flex:1,
         flexDirection:'row',
     },
+    catbank:{
+        paddingHorizontal:5,
+    },
+    category:{
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor:'#ffffff',
+        borderRadius:10,
+        padding:5,
+        minWidth:80
+    }
   });
 
   export default HomeScreen;
