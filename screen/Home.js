@@ -15,7 +15,7 @@ import FoodPicture from '../asset/food-picture.jpg';
 
 const HomeScreen=({navigation})=>{
     return(
-      <View style={styles.screen}>
+      <ScrollView style={styles.screen} horizontal={false}>
 
         {/*Alamat dan notifikasi*/}
         <View style={styles.topbar}>
@@ -29,7 +29,7 @@ const HomeScreen=({navigation})=>{
 
         {/*Greetings*/}
         <View style={{paddingTop:15,}}>
-            <Text style={{fontSize:20,fontWeight:'bold',color:'#3E4462'}}>Hello, John</Text>
+            <Text style={{fontSize:20,fontWeight:'bold',color:'#3E4462'}}>Hello, Rosie</Text>
             <Text style={{}}>What do you want to eat?</Text>
         </View>
 
@@ -75,9 +75,9 @@ const HomeScreen=({navigation})=>{
         </View>
 
         {/*Promo hari ini*/}
-        <View style={{flexDirection:'row',paddingTop:10}} >
+        <ScrollView style={{flexDirection:'row',paddingTop:10,backgroundColor:'#fadedf'}} horizontal={true}>
             {/*Promo item*/}
-            <TouchableOpacity>
+            <TouchableOpacity style={{marginHorizontal:10}}>
                 <ImageBackground
                     style={{width:300,height:300,borderRadius:10,}}
                     source={FoodPicture}
@@ -98,14 +98,61 @@ const HomeScreen=({navigation})=>{
                         </View>
                         </View>
                     </View>
-
-
                 </ImageBackground>
-                
             </TouchableOpacity>
-        </View>
+
+            <TouchableOpacity style={{marginHorizontal:10}}>
+                <ImageBackground
+                    style={{width:300,height:300,borderRadius:10,}}
+                    source={FoodPicture}
+                >
+                    <TouchableOpacity style={{padding:2,margin:5,backgroundColor:'white',borderRadius:50,alignSelf:'flex-end'}}>
+                        <Icon size={20} color="red" name="heart" />
+                    </TouchableOpacity>
+
+                    <View style={{flex:1,flexDirection:'column-reverse'}}>
+                        <View style={{backgroundColor:'white', margin:15,borderRadius:10,padding:10}}>
+                        <Text style={{fontSize:20,fontWeight:'bold'}}>Salad Fruid</Text>
+                        <Text style={{color:'#777777'}}>Delicious salad fruit</Text>
+                        <View style={{flexDirection:'row'}}>
+                            <Text style={{flex:0.7,color:'blue',fontWeight:'bold'}}>Rp. 25,0000</Text>
+                            <View style={{flex:0.3,backgroundColor:'red',alignItems:'center',borderRadius:10}}>
+                                <Text style={{color:'white'}}>5 left</Text>
+                            </View>
+                        </View>
+                        </View>
+                    </View>
+                </ImageBackground>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={{marginHorizontal:10}}>
+                <ImageBackground
+                    style={{width:300,height:300,borderRadius:10,}}
+                    source={FoodPicture}
+                >
+                    <TouchableOpacity style={{padding:2,margin:5,backgroundColor:'white',borderRadius:50,alignSelf:'flex-end'}}>
+                        <Icon size={20} color="red" name="heart" />
+                    </TouchableOpacity>
+
+                    <View style={{flex:1,flexDirection:'column-reverse'}}>
+                        <View style={{backgroundColor:'white', margin:15,borderRadius:10,padding:10}}>
+                        <Text style={{fontSize:20,fontWeight:'bold'}}>Salad Fruid</Text>
+                        <Text style={{color:'#777777'}}>Delicious salad fruit</Text>
+                        <View style={{flexDirection:'row'}}>
+                            <Text style={{flex:0.7,color:'blue',fontWeight:'bold'}}>Rp. 25,0000</Text>
+                            <View style={{flex:0.3,backgroundColor:'red',alignItems:'center',borderRadius:10}}>
+                                <Text style={{color:'white'}}>5 left</Text>
+                            </View>
+                        </View>
+                        </View>
+                    </View>
+                </ImageBackground>    
+            </TouchableOpacity>
+
+
+        </ScrollView>
         
-      </View>
+      </ScrollView>
     );
   }
 
@@ -114,7 +161,8 @@ const HomeScreen=({navigation})=>{
       //flex:1,
       //alignItems:'center',
       //justifyContent:'center',
-      padding:15,
+      paddingHorizontal:15,
+      paddingTop:15,
       backgroundColor:'#F8F5F2'
     },
     topbar:{
