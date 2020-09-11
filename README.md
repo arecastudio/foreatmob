@@ -4,12 +4,15 @@
 ## Figma UI/UX Source
 - https://www.figma.com/file/oELSIgcbK9yiNREBivGKzH/Fooder-Final?node-id=37%3A258
 
-## Progress
+## Frontend Progress
 ### Home
-- [ ] Auto geolocation
+- [x] Geolocation
 - [x] Greeting
-- [ ] Categories
-- [ ] Popular promo items
+- [x] Categories
+- [x] Popular promo items
 ### Shop
 ### Search
 ### Profile
+
+## Backend Progress
+- Will update soon
