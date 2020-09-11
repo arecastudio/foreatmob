@@ -61,7 +61,7 @@ const App: () => React$Node = () => {
         }} />
         <Tab.Screen name="Search" component={SearchScreen}
         options={{
-          tabBarLabel: 'Serch',
+          tabBarLabel: 'Search',
           tabBarIcon: ({ color, size }) => (
             <Icon size={24} color="red" name="search" />
           ),
