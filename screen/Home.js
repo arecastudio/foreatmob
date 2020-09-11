@@ -22,9 +22,9 @@ const HomeScreen=({navigation})=>{
             <View style={{flex:.8,justifyContent:'center'}}>
                 <Text>Jl. Pluit Muara Angke No. 12</Text>
             </View>
-            <View style={{flex:.2,alignItems:'center',justifyContent:'center'}}>
+            <TouchableOpacity style={{flex:.2,alignItems:'center',justifyContent:'center'}}>
                 <Icon size={24} color="red" name="bell" />
-            </View>
+            </TouchableOpacity>
         </View>
 
         {/*Greetings*/}
@@ -34,7 +34,7 @@ const HomeScreen=({navigation})=>{
         </View>
 
         {/*Random kategori*/}
-        <View style={{paddingTop:15,flexDirection:'row',justifyContent:'center'}}>
+        <View style={{paddingTop:15,flexDirection:'row',justifyContent:'space-between'}}>
             <TouchableOpacity style={styles.catbank}>
                 <View style={styles.category}>
                     <Icon size={24} color="red" name="heart" />
@@ -69,37 +69,40 @@ const HomeScreen=({navigation})=>{
             <View style={{flex:.8,justifyContent:'center'}}>
                 <Text style={{fontSize:15,fontWeight:'bold',color:'black'}}>Today's promo</Text>
             </View>
-            <View style={{flex:.2,alignItems:'center',justifyContent:'center'}}>
+            <TouchableOpacity style={{flex:.2,alignItems:'center',justifyContent:'center'}}>
                 <Text style={{color:'red'}}>See all</Text>
-            </View>
+            </TouchableOpacity>
         </View>
 
         {/*Promo hari ini*/}
-        <View style={{flexDirection:'row',paddingTop:10}}>
-            <ImageBackground
-                style={{width:300,height:300,borderRadius:10,}}
-                source={FoodPicture}
-            >
-                <TouchableOpacity style={{padding:2,margin:5,backgroundColor:'white',borderRadius:50,alignSelf:'flex-end'}}>
-                    <Icon size={20} color="red" name="heart" />
-                </TouchableOpacity>
+        <View style={{flexDirection:'row',paddingTop:10}} >
+            {/*Promo item*/}
+            <TouchableOpacity>
+                <ImageBackground
+                    style={{width:300,height:300,borderRadius:10,}}
+                    source={FoodPicture}
+                >
+                    <TouchableOpacity style={{padding:2,margin:5,backgroundColor:'white',borderRadius:50,alignSelf:'flex-end'}}>
+                        <Icon size={20} color="red" name="heart" />
+                    </TouchableOpacity>
 
-                <View style={{flex:1,flexDirection:'column-reverse'}}>
-                    <View style={{backgroundColor:'white', margin:15,borderRadius:10,padding:10}}>
-                    <Text>Salad Fruid</Text>
-                    <Text>Salad Fruid</Text>
-                    <View>
-                        <Text>Salad Fruid</Text>
-                        <TouchableOpacity>
-                            <Text>5 left</Text>
-                        </TouchableOpacity>
+                    <View style={{flex:1,flexDirection:'column-reverse'}}>
+                        <View style={{backgroundColor:'white', margin:15,borderRadius:10,padding:10}}>
+                        <Text style={{fontSize:20,fontWeight:'bold'}}>Salad Fruid</Text>
+                        <Text style={{color:'#777777'}}>Delicious salad fruit</Text>
+                        <View style={{flexDirection:'row'}}>
+                            <Text style={{flex:0.7,color:'blue',fontWeight:'bold'}}>Rp. 25,0000</Text>
+                            <View style={{flex:0.3,backgroundColor:'red',alignItems:'center',borderRadius:10}}>
+                                <Text style={{color:'white'}}>5 left</Text>
+                            </View>
+                        </View>
+                        </View>
                     </View>
-                    </View>
-                </View>
 
 
-            </ImageBackground>
-            
+                </ImageBackground>
+                
+            </TouchableOpacity>
         </View>
         
       </View>
@@ -127,7 +130,7 @@ const HomeScreen=({navigation})=>{
         backgroundColor:'#ffffff',
         borderRadius:10,
         padding:5,
-        minWidth:80
+        minWidth:60
     }
   });
 
