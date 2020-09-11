@@ -9,6 +9,6 @@
 - [x] Greeting
 - [ ] Categories
 - [ ] Popular promo items
-## Shop
-## Search
-## Profile
+### Shop
+### Search
+### Profile
