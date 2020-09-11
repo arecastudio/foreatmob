@@ -7,10 +7,11 @@ import {
     Text,
     Image,
     StatusBar,
+    ImageBackground,
     TouchableOpacity
   } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-
+import FoodPicture from '../asset/food-picture.jpg';
 
 const HomeScreen=({navigation})=>{
     return(
@@ -74,14 +75,31 @@ const HomeScreen=({navigation})=>{
         </View>
 
         {/*Promo hari ini*/}
-        <View style={{padding:3,borderColor:'red',borderRadius:5,}}>
-            <Image
-            style={{width:200,height:200}}
-            source={{
-            uri: 'https://images.all-free-download.com/images/graphicthumb/food_picture_02_hd_pictures_167557.jpg',
-            }}
-            />
-            <Text>Promo 1</Text>
+        <View style={{flexDirection:'row',paddingTop:10}}>
+            <ImageBackground
+                style={{width:300,height:300,borderRadius:10,}}
+                source={FoodPicture}
+            >
+                <TouchableOpacity style={{padding:2,margin:5,backgroundColor:'white',borderRadius:50,alignSelf:'flex-end'}}>
+                    <Icon size={20} color="red" name="heart" />
+                </TouchableOpacity>
+
+                <View style={{flex:1,flexDirection:'column-reverse'}}>
+                    <View style={{backgroundColor:'white', margin:15,borderRadius:10,padding:10}}>
+                    <Text>Salad Fruid</Text>
+                    <Text>Salad Fruid</Text>
+                    <View>
+                        <Text>Salad Fruid</Text>
+                        <TouchableOpacity>
+                            <Text>5 left</Text>
+                        </TouchableOpacity>
+                    </View>
+                    </View>
+                </View>
+
+
+            </ImageBackground>
+            
         </View>
         
       </View>
